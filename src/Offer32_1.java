@@ -9,7 +9,7 @@ import java.util.*;
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Offer32 {
+public class Offer32_1 {
 
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(3);
@@ -18,8 +18,8 @@ public class Offer32 {
         TreeNode node4 = new TreeNode(1);
         TreeNode node5 = new TreeNode(2);
         node1.left = node2; node1.right = node3; node2.left = node4; node2.right = node5;
-        Offer32 offer32 = new Offer32();
-        System.out.println(Arrays.toString(offer32.levelOrder(node1)));
+        Offer32_1 offer321 = new Offer32_1();
+        System.out.println(Arrays.toString(offer321.levelOrder(node1)));
     }
 
     // 二叉树的层次遍历
