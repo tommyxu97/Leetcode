@@ -13,5 +13,4 @@ public class Offer33 {
         while (postorder[p] > postorder[j]) p++;
         return p == j && recur(postorder, i, index - 1) && recur(postorder, index, j - 1);
     }
-
 }
