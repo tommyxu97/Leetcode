@@ -21,5 +21,15 @@ public class Offer48 {
         return max;
     }
     // DP
-
+    public int lengthOfLongestSubstring2(String s) {
+        int res = 0, temp = 0;
+        HashMap<Character, Integer> indexMap = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            int index = indexMap.getOrDefault(s.charAt(i), -1);
+            indexMap.put(s.charAt(i), i);
+            temp = temp < i - index? temp + 1: i - index;
+            res = Math.max(res, temp);
+        }
+        return res;
+    }
 }
