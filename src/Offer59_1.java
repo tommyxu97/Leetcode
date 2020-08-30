@@ -39,7 +39,7 @@ public class Offer59_1 {
         }
         res[0] = deque.peekFirst();
         for (int i = k; i < nums.length; i++) {
-            if (nums[i - k] == deque.peekFirst()) deque.removeFirst();
+            if (nums[i - k] == deque.peekFirst()) deque.pollFirst();
             while (!deque.isEmpty() && deque.peekLast() < nums[i]) {
                 deque.pollLast();
             }
