@@ -1,8 +1,8 @@
 import java.util.HashSet;
 
-public class Offer57 {
+public class Offer57_1 {
 
-    // 双指针
+    // 双指针，效率更高
     public int[] twoSum(int[] nums, int target) {
         int i = 0, j = nums.length - 1;
         while (i < j) {
