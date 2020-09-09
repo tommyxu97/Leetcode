@@ -2,6 +2,8 @@ package ByteDance.String;
 
 public class Q2 {
 
+    // 与主题库Q14相同
+
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";
         StringBuilder stringBuilder = new StringBuilder();
