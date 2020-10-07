@@ -9,6 +9,7 @@ package ByteDance.LinkedListAndTree;
  * }
  */
 public class Q3 {
+    // 与主题库Q2相同
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int sum, flag = 0;
         ListNode dummy = new ListNode(0);

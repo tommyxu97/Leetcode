@@ -9,6 +9,7 @@ package ByteDance.LinkedListAndTree;
  * }
  */
 public class Q1 {
+    // 与主题库Q21，剑指Offer25相同
     // 循环
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);

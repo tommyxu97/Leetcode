@@ -9,6 +9,7 @@ package ByteDance.LinkedListAndTree;
  * }
  */
 public class Q2 {
+    // 与主题库Q206，剑指Offer24相同
     public ListNode reverseList(ListNode head) {
         if (head == null) return null;
         ListNode pre = null, cur = head, next;
