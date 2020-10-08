@@ -8,6 +8,7 @@ public class Q1 {
 
 class MinStack {
 
+    // 与剑指Offer30相同
     private final Stack<Integer> stackA;
     private final Stack<Integer> stackB;
 
