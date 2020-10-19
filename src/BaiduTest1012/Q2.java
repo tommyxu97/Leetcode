@@ -1,4 +1,4 @@
-package Baidu1012;
+package BaiduTest1012;
 
 import java.util.Scanner;
 

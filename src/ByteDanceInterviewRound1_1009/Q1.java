@@ -1,4 +1,4 @@
-package ByteDance1009;
+package ByteDanceInterviewRound1_1009;
 
 public class Q1 {
     public static void main(String[] args) {
