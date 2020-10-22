@@ -14,7 +14,7 @@ public class Q20 {
         return s.equals("");
     }
 
-    //
+    // 2ms
     private final Map<Character, Character> map = new HashMap<Character, Character>() {{
         put('(', ')'); put('{', '}'); put('[', ']');
     }};
