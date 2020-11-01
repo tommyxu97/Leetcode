@@ -15,6 +15,7 @@ public class Q139 {
                 if (!dp[j]) {
                     // 只有dp[j] == false的时候才需要更新
                     dp[j] = dp[i] && wordSet.contains(s.substring(i, j));
+                    break;
                 }
             }
         }
