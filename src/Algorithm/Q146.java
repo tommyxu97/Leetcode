@@ -7,6 +7,7 @@ public class Q146 {
 }
 
 // 使用Java SDK LinkedHashMap实现
+// 手动实现见 ./ByteDance/DataStructure/Q2.java
 class LRUCache {
     private int maxSize;
     private LinkedHashMap<Integer, Integer> cache;
