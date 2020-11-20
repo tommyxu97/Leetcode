@@ -11,7 +11,7 @@ package Algorithm;
 public class Q147 {
     public ListNode insertionSortList(ListNode head) {
         if (head == null) return null;
-        ListNode dummy = new ListNode(Integer.MIN_VALUE), pre;
+        ListNode dummy = new ListNode(Integer.MIN_VALUE), pre, cur;
         dummy.next = head;
         while (head.next != null) {
             if (head.val <= head.next.val) {
@@ -20,7 +20,7 @@ public class Q147 {
             }
             pre = dummy;
             while (pre.next.val < head.next.val) pre = pre.next;
-            ListNode cur = head.next;
+            cur = head.next;
             head.next = cur.next;
             cur.next = pre.next;
             pre.next = cur;
