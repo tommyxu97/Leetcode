@@ -1,5 +1,8 @@
 package Algorithm;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class Q402 {
     public static void main(String[] args) {
         Q402 q402 = new Q402();
@@ -19,5 +22,30 @@ public class Q402 {
             while (stringBuilder.length() > 1 && stringBuilder.charAt(0) == '0') stringBuilder.deleteCharAt(0);
         }
         return stringBuilder.toString();
+    }
+
+    // 单调栈
+    public String removeKdigits2(String num, int k) {
+        if (num == null || num.length() < k) return null;
+        Deque<Character> deque = new LinkedList<>();
+        int remove = k;
+        for (char c: num.toCharArray()) {
+            while (!deque.isEmpty() && remove > 0 && deque.peekLast() > c) {
+                deque.pollLast();
+                remove--;
+            }
+            deque.addLast(c);
+        }
+        int remain = num.length() - k;
+        StringBuilder builder = new StringBuilder();
+        while (!deque.isEmpty() && deque.peekFirst() == '0') {
+            deque.pollFirst();
+            remain--;
+        }
+        while (remain > 0) {
+            builder.append(deque.pollFirst());
+            remain--;
+        }
+        return builder.length() == 0? "0": builder.toString();
     }
 }
