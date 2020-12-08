@@ -15,12 +15,12 @@ public class Q842 {
     private boolean recur(String str, int index) {
         if (index == str.length()) return res.size() >= 3;
         for (int i = 1; i <= str.length() - index; i++) {
+            if (str.charAt(index) == '0' && i >= 2) break;
             String substring = str.substring(index, index + i);
             long tempLong = Long.parseLong(substring);
             if (tempLong > Integer.MAX_VALUE) break;
             int temp = (int) tempLong;
             if (res.size() >= 2 && temp != res.get(res.size() - 1) + res.get(res.size() - 2)) continue;
-            if (str.charAt(index) == '0' && i >= 2) break;
             res.add(temp);
             boolean flag = recur(str, index + i);
             if (flag) return true;
