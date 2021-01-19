@@ -1,9 +1,11 @@
 package Algorithm;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Q1584 {
+    // 102ms
     public int minCostConnectPoints(int[][] points) {
         if (points == null || points.length == 0) return 0;
         int res = 0;
@@ -55,5 +57,31 @@ public class Q1584 {
                 return true;
             }
         }
+    }
+
+    // 32ms
+    public int minCostConnectPoints2(int[][] points) {
+        if (points == null || points.length == 0) return 0;
+        int n = points.length;
+        int[] dist = new int[n];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        boolean[] added = new boolean[n];
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            int min = 0;
+            for (int j = 0; j < n; j++) {
+                if (!added[j] && dist[j] < dist[min]) {
+                    min = j;
+                }
+            }
+            added[min] = true;
+            if (dist[min] != Integer.MAX_VALUE) {
+                res += dist[min];
+            }
+            for (int j = 0; j < n; j++) {
+                if (!added[j]) dist[j] = Math.min(dist[j], distance(points[min], points[j]));
+            }
+        }
+        return res;
     }
 }
