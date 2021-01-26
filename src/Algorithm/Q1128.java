@@ -26,4 +26,16 @@ public class Q1128 {
         domino[0] = domino[1];
         domino[1] = temp;
     }
+
+    // 3ms
+    public int numEquivDominoPairs2(int[][] dominoes) {
+        if (dominoes == null || dominoes.length == 0) return 0;
+        int res = 0;
+        int[] count = new int[100];
+        for (int[] domino: dominoes) {
+            if (domino[0] > domino[1]) swap(domino);
+            res += count[domino[0] * 10 + domino[1]]++;
+        }
+        return res;
+    }
 }
