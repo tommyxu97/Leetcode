@@ -1,14 +1,11 @@
 package Algorithm;
 
-import java.util.Arrays;
-
 public class Q1579 {
     public int maxNumEdgesToRemove(int n, int[][] edges) {
         if (edges == null || edges.length == 0) return 0;
         int res = 0;
         UnionFind alice = new UnionFind(n);
         UnionFind bob = new UnionFind(n);
-        Arrays.sort(edges, (o1, o2) -> o2[0] - o1[0]);
         for (int[] edge: edges) {
             int type = edge[0], x = edge[1] - 1, y = edge[2] - 1;
             if (type == 3) {
@@ -16,11 +13,15 @@ public class Q1579 {
                     alice.union(x, y);
                     bob.union(x, y);
                 } else res++;
-            } else if (type == 2) {
+            }
+        }
+        for (int[] edge: edges) {
+            int type = edge[0], x = edge[1] - 1, y = edge[2] - 1;
+            if (type == 2) {
                 if (!bob.isConnected(x, y)) {
                     bob.union(x, y);
                 } else res++;
-            } else {
+            } else if (type == 1) {
                 if (!alice.isConnected(x, y)) {
                     alice.union(x, y);
                 } else res++;
