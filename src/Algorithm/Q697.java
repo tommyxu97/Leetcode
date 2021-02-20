@@ -41,4 +41,24 @@ public class Q697 {
         }
         return min;
     }
+
+    // 6ms
+    public int findShortestSubArray2(int[] nums) {
+        int[] counts = new int[50000];
+        int max = 0;
+        for(int num: nums) {
+            max = Math.max(max, ++counts[num]);
+        }
+        if (max == 1) return 1;
+        int min = nums.length;
+        for (int i = 0; i < counts.length; i++) {
+            if (counts[i] == max) {
+                int start = 0, end = nums.length - 1;
+                while (nums[start] != i) start++;
+                while (nums[end] != i) end--;
+                min = Math.min(min, end - start + 1);
+            }
+        }
+        return min;
+    }
 }
