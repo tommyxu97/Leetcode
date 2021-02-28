@@ -16,4 +16,15 @@ public class Q896 {
         }
         return true;
     }
+
+    public boolean isMonotonic2(int[] A) {
+        if (A.length <= 2) return true;
+        boolean increase = false;
+        boolean decrease = false;
+        for (int i = 1; i < A.length; i++) {
+            if (A[i] - A[i - 1] > 0) increase = true;
+            if (A[i] - A[i - 1] < 0) decrease = true;
+        }
+        return !increase || !decrease;
+    }
 }
